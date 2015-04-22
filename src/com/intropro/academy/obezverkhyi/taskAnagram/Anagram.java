@@ -1,7 +1,7 @@
 package com.intropro.academy.obezverkhyi.taskAnagram;
 
 /**
- * Created by dtv on 22.04.2015.
+ * Created by obezverkhyi on 22.04.2015.
  */
 public class Anagram {
 
@@ -11,15 +11,28 @@ public class Anagram {
         char[] newArrChar = new char[arrChar.length];
         int count = arrChar.length - 1;
         for (int i = 0; i < arrChar.length; i++) {
-            newArrChar[i]=arrChar[count - i];
+            newArrChar[i] = arrChar[count - i];
 
         }
-        str = String.valueOf(newArrChar);
-
-        return str;
+        return String.valueOf(newArrChar);
     }
 
     public String getAnagram(String str){
+        String[] stArr = str.split(" ");
+        String st = "";
+        for (int i = 0; i < stArr.length; i++) {
+            stArr[i] = this.getRevers(stArr[i]);
+            st = st.concat(stArr[i].concat(" "));
+        }
+        return st;
+    }
+
+    public String getAnagramWithDigits(String str){
+        String[] stArr = str.split(" ");
+
+
+
+
         return str;
     }
 }
