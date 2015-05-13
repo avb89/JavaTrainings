@@ -27,12 +27,44 @@ public class Anagram {
         return st;
     }
 
-    public String getAnagramWithDigits(String str){
+    public static String getAnagrams(String str){
         String[] stArr = str.split(" ");
+        String newString = "";
 
+        for (int i = 0; i < stArr.length; i++) {
+            char[] ch = stArr[i].toCharArray();
+            int startCh = 0;
+            int finishCh = ch.length - 1;
 
+            while(startCh < finishCh){
+                while(isChar(ch[startCh]) == false){
+                    startCh++;
+                }
+                while(isChar(ch[finishCh]) == false){
+                    startCh--;
+                }
+                char temp = ch[startCh];
+                ch[startCh] = ch[finishCh];
+                ch[finishCh] = temp;
+                startCh++;
+                finishCh--;
+            }
+            newString = newString.concat(String.valueOf(ch).concat(" "));
+        }
 
-
-        return str;
+        return newString;
     }
+
+
+    public char[] stringToChar(String str){
+        return str.toCharArray();
+    }
+
+
+
+    public static boolean isChar(char ch){
+        return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
+    }
+
+
 }

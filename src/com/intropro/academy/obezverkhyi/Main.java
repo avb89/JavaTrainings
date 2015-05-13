@@ -8,13 +8,8 @@ import com.intropro.academy.obezverkhyi.taskAnagram.Anagram;
 public class Main {
     public static void main(String[] args) {
 
-        Anagram an = new Anagram();
-        System.out.println(an.getAnagram("Hello world"));
-
+        Anagram.getAnagrams("asf ta.r.arry");
 
     }
-
-
-
 
 }
